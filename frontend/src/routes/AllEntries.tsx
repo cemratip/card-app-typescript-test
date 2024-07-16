@@ -3,12 +3,12 @@ import { EntryContext } from '../utilities/globalContext'
 import { EntryContextType, Entry } from '../@types/context'
 import { useNavigate, Link } from "react-router-dom";
 
-export default function AllEntries(){
+export default function AllEntries({ darkMode }: { darkMode: boolean }){
     const {entries, deleteEntry} = useContext(EntryContext) as EntryContextType
     let navigate = useNavigate();
     if(entries.length == 0){
         return(
-            <section>
+            <section className={`${darkMode && "text-white"}`}>
                 <h1 className="text-center font-semibold text-2xl m-5">You don't have any card</h1>
                 <p className="text-center font-medium text-md">Lets <Link className="text-blue-400 underline underline-offset-1" to="/create">Create One</Link></p>
             </section>

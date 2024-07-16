@@ -14,5 +14,8 @@
   },
   "lint-staged": {
     "**/*": "prettier --ignore-path .prettierignore --ignore-unknown --write"
+  },
+  "dependencies": {
+    "@theme-toggles/react": "^4.1.0"
   }
 }
